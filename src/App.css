@@ -577,3 +577,7 @@
     position: absolute;
   }
 }
+
+#root {
+  width: 100%;
+}
