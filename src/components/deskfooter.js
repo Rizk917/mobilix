@@ -1,0 +1,18 @@
+import React from "react";
+import logo_F from "../images/logo_transparent.png";
+import { lazy } from "react";
+
+class DeskFooter extends React.Component {
+    render() {
+        return <footer className="desk-foot">
+            <img src={logo_F} loading={lazy} alt="logo" />
+                    <div className="ELN">
+                        <a href="#" className="left email">info@mobilix.com</a>
+                        <a href="#" className="left location">Location</a>
+                        <a href="#" className="left number">Phone-number</a>
+                    </div>
+        </footer>
+    }
+}
+
+export default DeskFooter;
