@@ -1,7 +1,7 @@
 import './About_us.css';
 
 
-function App() {
+function About() {
   return (
     <div className="container">
       <div className="about_us">
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default About;
