@@ -12,15 +12,15 @@ import { useState } from 'react';
 
 function Home() {
   const [show, setShow] = useState(false)
-  
+  const [open, setOpen] = useState(true);
   
   return (
     <div className="main">
       {/* <route path="/home element={</Home>}"/> */}
       <div className="desktop-view">
-        <DeskHeader />
-        <DeskBody />
-        <DeskFooter />
+        <DeskHeader open={open} setOpen={setOpen}/>
+        <DeskBody setOpen={setOpen}/>
+        <DeskFooter setOpen={setOpen}/>
       </div>
       <div className="phone-view">
         <Menu className={show ? 'main-open' : 'menu-back'} setShow={setShow}/>
