@@ -1,39 +1,75 @@
-import React from "react";
-import logo from '../images/logo_transparent.png';
-import bmenue from '../images/bmenu.png';
-import { lazy } from "react";
-import search from "../images/search.png";
+import React , { useState, lazy } from "react";
+import logo from "../images/logo_transparent.png";
+import bmenue from "../images/bmenu.png";
 
-class DeskHeader extends React.Component {
-    render() {
-        return <header className="deskheader">
-            <img src={logo} alt="logo" loading={lazy} className="desk-header-logo"/>
-                <div className="sidebar-child">
-                <a href="#" className="side-element">Home</a>
-                <a href="#" className="side-element">Phones</a>
-                <a href="#" className="side-element">News</a>
-                <a href="#" className="side-element">About us</a>
-                <a href="#" className="side-element">Contact us</a>
-                <a href="#" className="hidden">Favorites</a>
-                </div>
-                <div className="align-b">
-                    <p>New here?</p>
-                    <a href="#" onClick={drop}  className="drop"></a>
-                </div>
+
+
+function DeskHeader ({open, setOpen}) {
+  const handleOpen = () => {
+    setOpen((prevState)=> !prevState);
+  };
+
+    return (
+      <header className="deskheader">
+        <img
+          src={logo}
+          alt="logo"
+          loading={lazy}
+          className="desk-header-logo"
+          onClick={()=> setOpen(true)}
+        />
+        <div className="sidebar-child" onClick={()=> setOpen(true)}>
+          <a href="#" className="side-element">
+            Home
+          </a>
+          <a href="#" className="side-element">
+            Phones
+          </a>
+          <a href="#" className="side-element">
+            News
+          </a>
+          <a href="#" className="side-element">
+            About us
+          </a>
+          <a href="#" className="side-element">
+            Contact us
+          </a>
+          <a href="#" className="hidden">
+            Favorites
+          </a>
+        </div>
+        <div className="grow">
+          <div className={open ? 'align-b' : 'align-b-down'}>
+            <a href="#" className="drop" onClick={handleOpen}>
+              New here?
+            </a>
+            {/* className={`align-b ${props.className}`} */}
             <div className="navbar">
-                <a href="#">Sign-up</a>
-                <a href="#">Log-in</a>
-                <a href="#" className="hidden">Log-out</a>
+              <a href="#">Sign-up</a>
+              <a href="#">Log-in</a>
+              <a href="#" className="hidden">
+                Log-out
+              </a>
             </div>
-        </header>
-    }
-}
-function drop() {
-    let change = document.querySelector(".navbar");
-        change.classList.toggle("nav-dropdown");
-
-    let rotate = document.querySelector(".burger-menu");
-        rotate.classList.toggle("burger-rotate");
+          </div>
+        </div>
+      </header>
+    );
   }
+
+// function drop() {
+//   let change = document.querySelector(".align-b");
+//   change.classList.toggle("align-b-down");
+
+//   let rotate = document.querySelector(".burger-menu");
+//   rotate.classList.toggle("burger-rotate");
+// }
+
+// function close() {
+//   let change = document.querySelector(".align-b");
+//       change.classList.toggle("align-b-down");
+//   console.log("AKAL")
+// }
+
 
 export default DeskHeader;
