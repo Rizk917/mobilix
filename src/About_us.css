@@ -1,0 +1,90 @@
+h1{
+    width: 300px;
+    height: 80px;
+    color: white;
+    border-bottom: 12px solid white;
+    font-size: 60px;
+}
+
+h3{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 25px;
+    height: 312px;
+    width: 561px;
+    border-radius: nullpx;
+    color: white;
+}
+
+button {
+    width: 264px;
+    height: 60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    color: #DC769A;
+    background-color: white ;
+    border: none;
+    border-radius: 7px;
+    transition: 0.7s;
+}
+
+button:hover{
+    background: linear-gradient(121.57deg, rgba(255, 0, 82, 0.75) 30.97%, rgba(160, 193, 255, 0.75) 66.87%, rgba(254, 194, 215, 0.75) 66.88%, rgba(160, 193, 255, 0.75) 66.88%);
+    color: white;
+}
+
+body{
+    background-image: url(./image_background.jpeg);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+}
+
+.about_us {
+    position: absolute;
+    font-size: 20px;
+    z-index: 1;
+    left: 20vw;
+}
+.linear {
+    margin-top: -40vw;
+    width: 100vw;
+    height: 62vw;
+    transform: rotate(80deg);
+    background: linear-gradient(121.57deg, rgba(255, 0, 81, 0.75) 30.97%, rgba(160, 193, 255, 0.75) 66.87%, rgba(254, 194, 215, 0.75) 66.88%, rgba(160, 193, 255, 0.75) 66.88%);
+    background-blend-mode: darken;
+    border-radius: 193px;
+    transform: rotate(-39.92deg);
+}   
+
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 100, 162, 0.89);
+    z-index: -2;
+}
+/*.about_us::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 60vh;
+    width: 90%;
+    height: 100vh;
+    background: linear-gradient(121.57deg, rgba(255, 0, 82, 0.75) 30.97%, rgba(160, 193, 255, 0.75) 66.87%, rgba(254, 194, 215, 0.75) 66.88%, rgba(160, 193, 255, 0.75) 66.88%);
+    background-blend-mode: darken;
+    border-radius: 193px;
+    transform: rotate(-37.92deg);
+    z-index: -1;
+}*/
