@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom'  ;
-import App from './components/adminPages/contactUsadmin';
+import Home from './App';
+import App from './contactUs';
 // import ContactUs from './contactUs.js';
 import './Style.css'
 // import {BrowserRouter as Router} from 'react-router-dom'
@@ -16,7 +17,7 @@ import './Style.css'
 
 
 ReactDOM.render(
-    <App/>
+    <Home/>
 ,document.getElementById('root'));
 
 

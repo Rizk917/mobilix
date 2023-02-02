@@ -2,9 +2,9 @@ import React from "react";
 import logo_F from "../images/logo_transparent.png";
 import { lazy } from "react";
 
-class DeskFooter extends React.Component {
-    render() {
-        return <footer className="desk-foot">
+function DeskFooter (props){
+
+        return <footer className="desk-foot" onClick={()=>props.setOpen(true)}>
             <img src={logo_F} loading={lazy} alt="logo" />
                     <div className="ELN">
                         <a href="#" className="left email">info@mobilix.com</a>
@@ -12,7 +12,6 @@ class DeskFooter extends React.Component {
                         <a href="#" className="left number">Phone-number</a>
                     </div>
         </footer>
-    }
 }
 
 export default DeskFooter;
