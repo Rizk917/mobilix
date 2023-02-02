@@ -1,0 +1,146 @@
+React*{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* table tr:nth-child(odd) {
+	background: rgba(0, 0, 0, 0.07);
+}
+table, th, td {
+    margin: auto;
+    border: 1px solid;
+  } */
+  table {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+  }
+  
+  table thead, table tbody, table thead tr, table th {
+    display: block;
+  }
+  
+  table thead {
+    float: left;
+  }
+  
+  table tbody {
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+  }
+  
+  table td, table th {
+    padding: .625em;
+    line-height: 1.5em;
+    border-bottom: 1px dashed #ccc;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  table th {
+    text-align: left;
+    background: rgba(0, 0, 0, 0.14);
+    border-bottom: 1px dashed #aaa;
+  }
+  
+  table tbody tr {
+    display: table-cell;
+  }
+  
+  table tbody td {
+    display: block;
+  }
+  
+  table tr:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.07);
+  }
+  
+  @media screen and (min-width: 50em) {
+  
+    table {
+      display: table;
+    }
+    
+    table thead {
+      display: table-header-group;
+      float: none;
+    }
+    
+    table tbody {
+      display: table-row-group;
+    }
+    
+    table thead tr, table tbody tr {
+      display: table-row;
+    }
+    
+    table th, table tbody td {
+      display: table-cell;
+    }
+    
+    table td, table th {
+      width: auto;
+    }
+    
+  }
+  button {
+  margin: 20px;
+   width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+button {
+    background-color: #89d8d3;
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+    border: none;
+    z-index: 1;
+  }
+  button:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+     background-color: #4dccc6;
+  background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+    box-shadow:
+     -7px -7px 20px 0px #fff9,
+     -4px -4px 5px 0px #fff9,
+     7px 7px 20px 0px #0002,
+     4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    color: #fff;
+  }
+  button:hover:after {
+    top: 0;
+    height: 100%;
+  }
+  button:active {
+    top: 2px;
+  }
+  

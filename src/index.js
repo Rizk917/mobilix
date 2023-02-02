@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'  ;
-import App from './contactUs';
+import App from './components/adminPages/contactUsadmin';
 // import ContactUs from './contactUs.js';
 import './Style.css'
 // import {BrowserRouter as Router} from 'react-router-dom'
