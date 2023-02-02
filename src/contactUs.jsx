@@ -41,6 +41,7 @@ const ContactUs = () => {
   };
 
   return (
+    <>
     <form className="contact-form">
       <input
         type="text"
@@ -74,7 +75,7 @@ const ContactUs = () => {
        submit
       </button>
     </form>
-  );
+    </>);
 };
 
 export default ContactUs;
