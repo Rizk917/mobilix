@@ -4,35 +4,45 @@ import React, { useState } from "react";
 const ContactUs = () => {
   const [myData, setmyData] = useState({
     fullName: "",
-    mail: "",
+    email: "",
     Message: "",
   });
   const { fullName, email, Message } = myData;
-  // console.log(myData.message);
 
   const onChange = (e) => {
     setmyData({ ...myData, [e.target.name]: e.target.value });
   };
 
+  const [error, setError] = useState("");
+
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    if (!fullName) {
+      setError("Full Name is required");
+      return;
+    }
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+    if (!Message) {
+      setError("Message is required");
+      return;
+    }
+
+    setError("");
+
     const newContact = {
       fullName: fullName,
-      mail: email,
+      email: email,
       Message: Message,
     };
-    // await axios.post("http://localhost:5000/contactus", newContact);
-    console.log(newContact);
-    // const config = {
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    // };
     try {
       await axios.post("http://localhost:5000/contactus", newContact);
       setmyData({
         fullName: "",
-        mail: "",
+        email: "",
         Message: "",
       });
     } catch (err) {
@@ -41,39 +51,57 @@ const ContactUs = () => {
   };
 
   return (
-    <form className="contact-form">
-      <input
-        type="text"
-        name="fullName"
-        value={fullName}
-        placeholder="Enter your Full name"
-        onChange={onChange}
-        required
-      />
-    
-      <input
-        type="text"
-        name="email"
-        value={email}
-        placeholder="Enter your email "
-        onChange={onChange}
-        required
-      />
-      <input
-        type="text"
-        name="Message"
-        value={Message}
-        placeholder="Enter your Message"
-        onChange={onChange}
-        required
-      />
+    <div className="cnt-wrapper">
+      <div className="cntct-us">
+        <div className="div">
+          <h1 className="H1">Contact Us</h1>
+        </div>
+        <form className="contact-form" onSubmit={onSubmit}>
+          <p className="chat">Let’s Talk, How can we help?</p>
+          <input
+            type="text"
+            name="fullName"
+            value={fullName}
+            placeholder="Enter your Full name"
+            onChange={onChange}
+          />
+          {error === "Full Name is required" && (
+            <p className="errorr">{error}</p>
+          )}
 
+          <input
+            type="text"
+            name="email"
+            value={email}
+            placeholder="Enter your email "
+            onChange={onChange}
+          />
+          {error === "Email is required" && (
+            <p className="errorr">{error}</p>
+          )}
 
-      <br />
-      <button  type="submit" onClick={onSubmit}>
-       submit
-      </button>
-    </form>
+          <textarea
+            type="text"
+            name="Message"
+            value={Message}
+            placeholder="Enter your Message"
+            onChange={onChange}
+          />
+          {error === "Message is required" && (
+            <p className="errorr">{error}</p>
+          )}
+
+          <br />
+          <button className="form-sbmt" type="submit">
+            Submit
+          </button>
+        </form>
+        <h3 className="help">Send us a <br></br>message by filling <br></br>up this form</h3>
+        <div className="cntct-bck">
+          <a href="/">Back</a>
+        </div>
+      </div>
+    </div>
   );
 };
 
