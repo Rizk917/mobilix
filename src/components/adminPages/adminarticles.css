@@ -1,7 +1,7 @@
 React*{
     margin: 0;
     padding: 0;
-    display: flex;
+    /* display: flex; */
 }
 .center{
     display: flex;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'  ;
-import Home from './App';
+import AdminNav from './components/adminPages/adminNav';
 import App from './contactUs';
 // import ContactUs from './contactUs.js';
 import './Style.css'
@@ -17,7 +17,7 @@ import './Style.css'
 
 
 ReactDOM.render(
-    <Home/>
+    <AdminNav/>
 ,document.getElementById('root'));
 
 
