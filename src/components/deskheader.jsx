@@ -25,17 +25,14 @@ function DeskHeader({ open, setOpen }) {
         <a href="#" className="side-element">
           Phones
         </a>
-        <a href="#" className="side-element">
+        <a href="/news" className="side-element">
           News
         </a>
         <a href="/aboutus" className="side-element">
           About us
         </a>
-        <a href="/contactus" className="side-element">
+        <a href="/contactus" className="hidden">
           Contact us
-        </a>
-        <a href="#" className="hidden">
-          Favorites
         </a>
       </div>
       <div className="grow">
@@ -45,9 +42,9 @@ function DeskHeader({ open, setOpen }) {
           </a>
           {/* className={`align-b ${props.className}`} */}
           <div className="navbar">
-            <a href="#">Sign-up</a>
-            <a href="#">Log-in</a>
-            <a href="#" className="hidden">
+            <a href="#" onClick={sign}>Sign-up</a>
+            <a href="#" onClick={drop}>Log-in</a>
+            <a href="/" className="hidden">
               Log-out
             </a>
           </div>
@@ -57,19 +54,15 @@ function DeskHeader({ open, setOpen }) {
   );
 }
 
-// function drop() {
-//   let change = document.querySelector(".align-b");
-//   change.classList.toggle("align-b-down");
+function drop() {
+  let change = document.querySelector(".pop-up-login");
+  change.classList.toggle("pop-up-login-show");
+}
 
-//   let rotate = document.querySelector(".burger-menu");
-//   rotate.classList.toggle("burger-rotate");
-// }
 
-// function close() {
-//   let change = document.querySelector(".align-b");
-//       change.classList.toggle("align-b-down");
-//   console.log("AKAL")
-// }
-
+function sign() {
+  let change = document.querySelector(".sign-up-login");
+  change.classList.toggle("sign-up-login-show");
+}
 
 export default DeskHeader;
