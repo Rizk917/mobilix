@@ -5,22 +5,19 @@ import phones from '../images/phones.png';
 import news from '../images/news.png';
 
 function FooterPhone(props) {
-        return <footer onClick={()=>props.setShow(false)}>
-        <a href="#">
-          <img src={house} className="house"></img>
-        </a>
-        <a href="#">
-          <img src={heart} className="heart"></img>
-        </a>
-        <a href="#">
-          <img src={phones} className="phones"></img>
-        </a>
-        <a href="#">
-          <img src={news} className="news">
+  return <footer onClick={() => props.setShow(false)}>
+    <a href="/">
+      <img src={house} className="house"></img>
+    </a>
+    <a href="/phones">
+      <img src={phones} className="phones"></img>
+    </a>
+    <a href="/news">
+      <img src={news} className="news">
 
-          </img>
-        </a>
-      </footer>
+      </img>
+    </a>
+  </footer>
 }
 
 export default FooterPhone;
