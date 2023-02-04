@@ -22,7 +22,7 @@ function DeskHeader({ open, setOpen }) {
         <a href="/" className="side-element">
           Home
         </a>
-        <a href="#" className="side-element">
+        <a href="/Phones" className="side-element">
           Phones
         </a>
         <a href="#" className="side-element">

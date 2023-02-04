@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './adminNav.css'
+import Dashborad from "./Dashboard";
 import AdminContactUs from "./contactUsadmin";
-
 
 function AdminNav(){
 

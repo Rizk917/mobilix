@@ -5,7 +5,7 @@ import Home from './App';
 
 
 ReactDOM.render(
-    <AdminNav/>
+    <Home/>
 ,document.getElementById('root'));
 
 

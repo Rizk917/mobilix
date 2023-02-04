@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import './adminarticles.css'
+import AdminNav from "./adminNav";
 
 export default function Home() {
   const [users, setUsers] = useState([]);
@@ -25,7 +26,8 @@ export default function Home() {
 
   return (
     <div className="container">
-        <h1>Dashboard</h1>
+    <AdminNav/>
+
       <div className="center" >
         <h1>Contact US</h1>
         <table>
