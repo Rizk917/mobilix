@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import './adminarticles.css'
 import AdminNav from "./adminNav";
 
-export default function Home() {
+export default function AdminContactUs() {
   const [users, setUsers] = useState([]);
 
   const { id } = useParams();

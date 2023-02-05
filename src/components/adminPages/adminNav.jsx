@@ -10,9 +10,9 @@ function AdminNav(){
         <div className="adnav">
         <ul className="ul-adminNav">
             <h1>Dashborad</h1>
-            <li className="nav-item"><a href="/AdminContactUs">Home</a></li>
-            <li className="nav-item"><a href="#">About</a></li>
-            <li className="nav-item"><a className="contact" href="#">Contact</a></li>
+            <li className="nav-item"><a href="/AdminContactUs">contact us</a></li>
+            <li className="nav-item"><a href="Adminarticle">article</a></li>
+            <li className="nav-item"><a  href="/AdminPhonedata">phones</a></li>
         </ul>
     </div>
 
