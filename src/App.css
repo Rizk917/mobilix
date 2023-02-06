@@ -779,9 +779,7 @@ body {
     font-size: 20px;
   }
 
-  .search-bar::placeholder {
-    padding-left: 20px;
-  }
+
 
   .search-icons {
     grid-column-start: 2;
@@ -1007,8 +1005,8 @@ body {
   .grow {
     display: flex;
     flex-direction: column;
-    height: 214px;
-    margin-top: 186px;
+    height: 154px;
+    margin-top: 123px;
     width: 10vw;
     background-color: transparent;
     align-items: baseline;
@@ -1198,6 +1196,7 @@ body {
     overflow: hidden;
     background: #6285FF;
     box-shadow: 0px 0px 85px #FFFFFF;
+    border-radius: 13px;
   }
 
   .login-form {
@@ -1220,7 +1219,7 @@ body {
     width: 33vh;
     height: 41vh;
     position: absolute;
-    margin-top: 25vh;
+    margin-top: 22vh;
     z-index: 5;
   }
 
@@ -1236,10 +1235,12 @@ body {
     font-size: 17px;
     justify-content: center;
     padding: 10px;
+    padding-left: 20px;
   }
 
   .login-form input::placeholder {
     color: white;
+    /* padding-left: 20px; */
   }
 
 
@@ -1289,7 +1290,7 @@ body {
     text-decoration: underline;
     height: 20px;
     margin-top: 50px;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: bold;
     color: #1D86F5;
     cursor: pointer;
@@ -1326,7 +1327,6 @@ body {
     font-weight: bold;
     bottom: 78px;
     left: 268px;
-    border-bottom: 4px solid #1D86f5;
   }
 
   .circle-lg-3::before {
@@ -1338,7 +1338,6 @@ body {
     font-weight: bold;
     bottom: 78px;
     left: 268px;
-    border-bottom: 4px solid #1D86f5;
   }
 }
 
