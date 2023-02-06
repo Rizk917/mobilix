@@ -20,6 +20,7 @@ const AdminPhonedata = () => {
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData)
   };
 
   // const onSubmit = async (e) => {
@@ -59,6 +60,7 @@ const AdminPhonedata = () => {
     formData.append("camera", camera);
     formData.append("vendor", vendor);
     formData.append("prodDate", prodDate);
+    console.log({formData})
   
     try {
       await axios.post("http://localhost:5000/phones", formData, {
