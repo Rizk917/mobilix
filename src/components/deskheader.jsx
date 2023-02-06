@@ -42,7 +42,6 @@ function DeskHeader({ open, setOpen }) {
           </a>
           {/* className={`align-b ${props.className}`} */}
           <div className="navbar">
-            <a href="#" onClick={sign}>Sign-up</a>
             <a href="#" onClick={drop}>Log-in</a>
             <a href="/" className="hidden">
               Log-out
@@ -58,11 +57,4 @@ function drop() {
   let change = document.querySelector(".pop-up-login");
   change.classList.toggle("pop-up-login-show");
 }
-
-
-function sign() {
-  let change = document.querySelector(".sign-up-login");
-  change.classList.toggle("sign-up-login-show");
-}
-
 export default DeskHeader;
