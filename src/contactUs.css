@@ -1,0 +1,174 @@
+body {
+        background-image: url(./image_background.jpeg);
+        background-size: 100% 100vh;
+        background-repeat: no-repeat;
+        width: 95%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+
+}
+
+body::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(121.57deg, rgba(255, 0, 81, 0.75) 30.97%, rgba(160, 193, 255, 0.75) 66.87%, rgba(254, 194, 215, 0.75) 66.88%, rgba(160, 193, 255, 0.75) 66.88%);
+    z-index: -2;
+}
+
+
+
+.contact_us{
+    position: absolute;
+    margin-bottom: 250px;
+    margin-top: 150px;
+    margin-left: 55px;
+
+}
+
+.contact_us h1{
+    color: white;
+    border-bottom:10px solid white;
+    height: 80px;
+    width: 300px;
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+.contact_us h3{
+    color: white;
+    font-size: 45px;
+    width: 450px;
+    margin-top: 80px;
+}
+
+.arrow{
+    border: solid rgb(252, 248, 248);
+    border-width: 0 8px 8px 0;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 450px;
+    margin-top: 20px;
+  }
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+.line{
+    border-bottom: 8px solid white;
+    width: 200px;
+    margin-left: 320px;
+    margin-top: -61px;
+}
+
+ button{
+        width: 264px;
+        height: 60px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 30px;
+        color: #DC769A;
+        background-color: white ;
+        border: none;
+        border-radius: 7px;
+        transition: 0.7s;
+    }
+
+
+
+button:hover{
+        background: linear-gradient(121.57deg, rgba(255, 0, 82, 0.75) 30.97%, rgba(160, 193, 255, 0.75) 66.87%, rgba(254, 194, 215, 0.75) 66.88%, rgba(160, 193, 255, 0.75) 66.88%);
+        color: white;
+    }
+
+.return_bottom{
+    margin-top: 80px;
+}
+
+.contact-form{
+    width: 35%;
+    height: 50vh;
+    padding: 12px; 
+    border: 1px solid #ccc ; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-bottom: 16px;
+    resize: vertical ;
+    background: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 833px;
+    margin-top: 195px;
+    position: absolute;
+}
+
+input{
+    background-color: white;
+    margin-top: 40px;
+    width: 50%;
+    height: 30px
+}
+
+.submit1{
+    height:40px;
+    width: 180px;
+    margin-top: 15px;
+    
+}
+
+
+
+
+
+
+/* 
+
+
+h1{
+    width: 300px;
+    height: 80px;
+    color: white;
+    border-bottom: 12px solid white;
+    font-size: 60px;
+}
+
+h3{
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 25px;
+    height: 312px;
+    width: 561px;
+    border-radius: nullpx;
+    color: white;
+}
+
+button {
+    width: 264px;
+    height: 60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    color: #DC769A;
+    background-color: white ;
+    border: none;
+    border-radius: 7px;
+    transition: 0.7s;
+}
+
+button:hover{
+    background: linear-gradient(121.57deg, rgba(255, 0, 82, 0.75) 30.97%, rgba(160, 193, 255, 0.75) 66.87%, rgba(254, 194, 215, 0.75) 66.88%, rgba(160, 193, 255, 0.75) 66.88%);
+    color: white;
+} */

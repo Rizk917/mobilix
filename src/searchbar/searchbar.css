@@ -1,0 +1,42 @@
+
+.search_wrapper{
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+}
+.search_bar{
+    background-color: blue;
+    height: 15vh;
+}
+
+.white_box{
+    background-color: white;
+    border: 2px solid black;
+    height: 5vh;
+    width: 90vh;
+    position: absolute;
+    left: 25%;
+    top: 5%; 
+}
+
+.search_btn{
+    height: 5vh;
+    width: 10vh;
+    font-size: 20px;
+}
+
+@media(max-width: 700px){
+    .white_box{
+        width:30vh;
+        height: 4vh;
+        position: absolute;
+        left: 18%;
+    }
+
+    .search_btn{
+        height: 4vh;
+        width:6vh;
+        font-size: 12px;
+    }
+}
+
