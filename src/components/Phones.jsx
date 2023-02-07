@@ -12,9 +12,9 @@ import { Path } from 'react-router';
 
 function PhonePage() {
   const [phones, setPhones] = useState([]);
-  const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(true);
 
-  useEffect(() => {
+useEffect(() => {
     loadphones();
   }, []);
 
@@ -25,25 +25,23 @@ function PhonePage() {
     });
     setPhones(sortedphones);
   }
-
+  
 
   return (
-    <>
-      <DeskHeader open={open} setOpen={setOpen} />
-      <div className="hiii" setOpen={setOpen}>
-        <div className="grid-container">
-          {phones.map(phone => (
-            <div className="grid-item" key={phone.id}>
+    <div>
+      <DeskHeader open={open} setOpen={setOpen}/>
+      <div className="grid-container" setOpen={setOpen}>
+        {phones.map(phone => (
+          <div className="grid-item" key={phone.id}>
+        
 
-
-              <h3>{phone.phoneModel}</h3>
-              <img src={`http://localhost:5000/${phone.image}`} alt={phone.phoneModels} />
-            </div>
-          ))}
-        </div>
+            <h3>{phone.phoneModel}</h3>
+            <img src={`http://localhost:5000/${phone.image}`} alt={phone.phoneModels} />
+          </div>
+        ))}
       </div>
-      <DeskFooter setOpen={setOpen} />
-    </>
+      <DeskFooter />
+    </div>
   );
 }
 
