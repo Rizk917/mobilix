@@ -60,8 +60,8 @@ const AdminPhonedata = () => {
     formData.append("camera", camera);
     formData.append("vendor", vendor);
     formData.append("prodDate", prodDate);
-    console.log({formData})
-  
+    console.log({ formData })
+
     try {
       await axios.post("http://localhost:5000/phones", formData, {
         headers: {
@@ -81,7 +81,7 @@ const AdminPhonedata = () => {
       console.log("error", err.response.data);
     }
   };
-  
+
   const [phoness, setphoness] = useState([]);
 
   const { id } = useParams();
@@ -103,9 +103,8 @@ const AdminPhonedata = () => {
 
   return (
     <>
-    <AdminNav/>
-
-      <div>
+      <AdminNav />
+      <div className="phones-table">
         <h1>Phones</h1>
         <table>
           <thead>
@@ -144,7 +143,7 @@ const AdminPhonedata = () => {
       </div>
 
       <div className="form-admin">
-        <form className="contact-form" encType="multipart/form-data">
+        <form className="contact-formm" encType="multipart/form-data">
           <input
             type="text"
             name="phoneModel"
@@ -198,15 +197,15 @@ const AdminPhonedata = () => {
           />
           <br />
           <input
-        type="file"
-        name="image"
-        // multiple
-        // accept="image/*"
-        
-        onChange={onChange}
-      />
+            type="file"
+            name="image"
+            // multiple
+            // accept="image/*"
+
+            onChange={onChange}
+          />
           <br />
-          <button type="submit" onClick={onSubmit}>
+          <button className="button2" type="submit" onClick={onSubmit}>
             Post
           </button>
         </form>
