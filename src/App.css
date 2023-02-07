@@ -12,6 +12,7 @@ body {
 #root {
   display: flex;
   margin: 0;
+  flex-direction: column;
 }
 
 @media all and (max-width:700px) {
@@ -179,7 +180,6 @@ body {
     margin-top: 5px;
     width: 95px;
     height: 95px;
-    border-radius: 50%;
   }
 
   .search-icon {
@@ -378,16 +378,15 @@ body {
     margin-top: 45px;
     display: grid;
     grid-template-columns: 100%;
+    grid-template-rows: minmax(350px, auto) auto;
     width: 100%;
-    height: 60vh;
-    overflow: hidden;
-    overflow-y: scroll;
     justify-content: center;
     align-items: center;
-    grid-gap: 38px;
+    grid-gap: 16px;
   }
 
   .news-c {
+    height: 100%;
     display: grid;
     grid-template-columns: 30% 1fr;
     grid-template-rows: minmax(5vh, auto);
@@ -397,7 +396,7 @@ body {
   }
 
   .news-c img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     grid-row: 1/3;
     height: 100%;
@@ -413,12 +412,12 @@ body {
     font-size: 14px;
   }
 
-  .main-new p {
-    font-size: larger;
+  .news-c:first-child p {
+    font-size: 20px;
   }
 
-  .main-new h5 {
-    font-size: larger;
+  .news-c:first-child h5 {
+    font-size: 20px;
   }
 
   .pop-up-login,
@@ -432,6 +431,18 @@ body {
 @media all and (min-width: 701px) {
   .desktop-view {
     width: 100%;
+  }
+
+  .main-home {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-home h1 {
+    font-size: 50px;
+    padding-left: 50px;
   }
 
   .sign-up-wrapper {
@@ -455,9 +466,8 @@ body {
     font-size: 19px;
   }
 
-  .main-new h5 {
+  .main-new:first-child h5 {
     font-size: 27px;
-
   }
 
   .linear {
@@ -717,16 +727,15 @@ body {
 
   .deskheader {
     width: 100%;
-    height: 173px;
+    height: 100px;
     display: grid;
     grid-template-columns: 22% 63% 15%;
-    grid-template-rows: 173px;
+    grid-template-rows: 97px;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    z-index: -5;
-    background-color: #ffffff;
-    top: 0;
+    background-color: #F1F1F1;
+    position: sticky;
+    top: 0px;
   }
 
   .desk-header-logo {
@@ -801,16 +810,24 @@ body {
     gap: 80px;
   }
 
-  .main-hero {
+  .main {
     width: 100%;
-    z-index: -6;
     display: flex;
+    flex-direction: column;
+  }
+
+  .main-hero {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
     background-color: #F1F1F1;
-    align-items: center;
-    flex-direction: row;
-    position: absolute;
-    margin-top: 196px;
-    height: 53vh;
+    grid-template-columns: 30% 70%;
+    height: 100%;
+    margin-top: 100px
+  }
+
+  .main-hero h1 {
+    font-size: 25px;
   }
 
   .sidebar-child {
@@ -859,22 +876,21 @@ body {
 
   .updates {
     display: grid;
-    grid-template-columns: 300px 300px;
-    grid-template-rows: 45vh;
+    grid-template-columns: minmax(20vw, auto) minmax(20vw, auto);
+    grid-template-rows: 55vh;
     justify-content: center;
-    width: 50%;
+    width: 42%;
     height: 45vh;
-    background-color: #F1F1F1;
     margin: 0 auto;
     gap: 3%;
   }
 
   .item-1,
   .item-2 {
-    width: 80%;
+    width: 100%;
     height: 100%;
     background: url("./images/up.png");
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -883,14 +899,14 @@ body {
     position: relative;
   }
 
-  .item-1::after,
-  .item-2::after {
+  .itm-1-after {
     color: white;
     content: 'HELLO WORLD';
-    font-size: 28px;
+    font-size: 18px;
     font-weight: bold;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     position: absolute;
     width: 100%;
@@ -898,10 +914,15 @@ body {
     background-color: black;
     opacity: 0;
     transition: 0.35s;
+    overflow: hidden;
   }
 
-  .item-1:hover::after,
-  .item-2:hover::after {
+  .itm-1-after p {
+    width: 80%;
+    overflow: scroll;
+  }
+
+  .itm-1-after:hover {
     opacity: 0.7;
   }
 
@@ -912,21 +933,28 @@ body {
   }
 
   .desk-foot {
-    position: absolute;
     overflow: hidden;
-    bottom: 0;
     width: 100%;
     height: 180px;
-    display: grid;
-    grid-template-columns: 25% 65%;
+    display: flex;
     background-color: #747474;
   }
 
   .desk-foot img {
-    margin-top: -260px;
-    margin-left: -15vw;
-    max-width: 60vw;
+    margin-top: -309px;
+    width: 50vh;
     height: 820px;
+    object-fit: contain;
+  }
+
+  .deskwrap {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+    gap: 50px;
+    /* justify-content: space-around; */
   }
 
   footer a {
@@ -941,9 +969,6 @@ body {
     text-decoration: underline;
   }
 
-  .left {
-    margin-left: 10vw;
-  }
 
   .email::before {
     content: '';
@@ -1100,23 +1125,25 @@ body {
   }
 
   .scrl-cnt-news {
-    height: 53vh;
     width: 100%;
-    overflow: scroll;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: minmax(400px, auto) auto;
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+
+  .news-c:first-child {
+    font-size: 20px;
   }
 
   .news-c {
     width: 100%;
-    height: 100%;
     display: grid;
-    grid-template-columns: 40vh 1fr;
+    grid-template-columns: 35% 1fr;
     grid-template-rows: auto auto;
-    grid-column-gap: 30px;
     align-items: center;
-    border-bottom: 5px solid white;
+    grid-gap: 10px;
   }
 
   .news-c .p {
@@ -1124,7 +1151,6 @@ body {
   }
 
   .main-new {
-    font-size: larger;
     border-bottom: 10px solid white;
   }
 
@@ -1135,8 +1161,8 @@ body {
 
   .news-c img {
     width: 100%;
-    object-fit: contain;
-    height: 83%;
+    object-fit: cover;
+    height: 100%;
     grid-row: 1 / 3;
   }
 
