@@ -29,8 +29,6 @@ function App() {
       <Route path="/Adminarticle" element={<Adminarticle />}></Route>
       <Route path="/AdminContactUs" element={<AdminContactUs />}></Route>
       <Route path="/AdminPhonedata" element={<AdminPhonedata />}></Route>
-
-      
     </Routes>
   </BrowserRouter>
   <LgiPop />

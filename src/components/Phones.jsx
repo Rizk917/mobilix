@@ -12,7 +12,7 @@ import { Path } from 'react-router';
 
 function PhonePage() {
   const [phones, setPhones] = useState([]);
-
+    const [open, setOpen] = useState(true);
 
 useEffect(() => {
     loadphones();
@@ -29,8 +29,8 @@ useEffect(() => {
 
   return (
     <div>
-      <DeskHeader />
-      <div className="grid-container">
+      <DeskHeader open={open} setOpen={setOpen}/>
+      <div className="grid-container" setOpen={setOpen}>
         {phones.map(phone => (
           <div className="grid-item" key={phone.id}>
         

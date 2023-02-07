@@ -5,7 +5,7 @@ import AdminNav from "./adminNav";
 
 
 const AdminPhonedata = () => {
-  const [formData, setFormData] = useState({
+  const [product, setProduct] = useState({
     phoneModel: "",
     display: "",
     image: "",
@@ -15,12 +15,16 @@ const AdminPhonedata = () => {
     prodDate: "",
   });
   const { phoneModel, display, body, image, camera, vendor, prodDate } =
-    formData;
+    product;
   // console.log(formData.vendor);
 
-  const onChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData)
+  const PostAll = (e) => {
+    if(e.target.name == "image")
+    setProduct({ ...product, [e.target.name]: e.target.files[0]});
+    else
+    setProduct({ ...product, [e.target.name]: e.target.value });
+
+    console.log(e.target)
   };
 
   // const onSubmit = async (e) => {
@@ -52,23 +56,25 @@ const AdminPhonedata = () => {
   // };
   const onSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("phoneModel", phoneModel);
-    formData.append("display", display);
-    formData.append("body", body);
-    formData.append("image", image);
-    formData.append("camera", camera);
-    formData.append("vendor", vendor);
-    formData.append("prodDate", prodDate);
-    console.log({formData})
+    var battikh = new FormData();
+    // battikh =product;
+    battikh.append(product,"")
+    console.log("fff",product)
+    // formData.append("phoneModel", phoneModel);
+    // formData.append("display", display);
+    // formData.append("body", body);
+    // formData.append("image", image);
+    // formData.append("camera", camera);
+    // formData.append("vendor", vendor);
+    // formData.append("prodDate", prodDate);
   
     try {
-      await axios.post("http://localhost:5000/phones", formData, {
+      await axios.post("http://localhost:5000/phones", battikh, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       });
-      setFormData({
+      setProduct({
         phoneModel: "",
         display: "",
         image: "",
@@ -150,7 +156,7 @@ const AdminPhonedata = () => {
             name="phoneModel"
             value={phoneModel}
             placeholder="Enter phoneModel"
-            onChange={onChange}
+            onChange={PostAll}
             required
           />
           <input
@@ -158,7 +164,7 @@ const AdminPhonedata = () => {
             name="display"
             value={display}
             placeholder="Enter  display data"
-            onChange={onChange}
+            onChange={PostAll}
             required
           />
           <br />
@@ -167,7 +173,7 @@ const AdminPhonedata = () => {
             name="prodDate"
             value={prodDate}
             placeholder="Enter production Date"
-            onChange={onChange}
+            onChange={PostAll}
             required
           />
           <input
@@ -175,7 +181,7 @@ const AdminPhonedata = () => {
             name="body"
             value={body}
             placeholder="enter body data"
-            onChange={onChange}
+            onChange={PostAll}
             required
           />
           <br />
@@ -184,7 +190,7 @@ const AdminPhonedata = () => {
             name="camera"
             value={camera}
             placeholder="Enter camera data "
-            onChange={onChange}
+            onChange={PostAll}
             required
           />
           <br />{" "}
@@ -193,7 +199,7 @@ const AdminPhonedata = () => {
             name="vendor"
             value={vendor}
             placeholder="Enter The Vendor/Manifacturer"
-            onChange={onChange}
+            onChange={PostAll}
             required
           />
           <br />
@@ -202,8 +208,8 @@ const AdminPhonedata = () => {
         name="image"
         // multiple
         // accept="image/*"
-        
-        onChange={onChange}
+        // upload
+        onChange={PostAll}
       />
           <br />
           <button type="submit" onClick={onSubmit}>
