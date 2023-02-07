@@ -8,39 +8,39 @@ import axios from 'axios';
 
 
 function NewsCards(props) {
-  const [articles, setarticles] = useState([]);
-
-
+    const [articles, setarticles] = useState([]);
+  
+  
   useEffect(() => {
-    loadarticles();
-  }, []);
+      loadarticles();
+    }, []);
+  
+    const loadarticles = async () => {
+        const result = await axios.get("http://localhost:5000/news");
+        const sortedArticles = result.data.sort((a, b) => {
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        });
+        setarticles(sortedArticles);
+      }
+      
 
-  const loadarticles = async () => {
-    const result = await axios.get("http://localhost:5000/news");
-    const sortedArticles = result.data.sort((a, b) => {
-      return new Date(b.createdAt) - new Date(a.createdAt);
-    });
-    setarticles(sortedArticles);
-  }
+    return <div className="scrl-cnt-news" onClick={() => props.setShow(false)}>
 
 
-  return <div className="scrl-cnt-news" onClick={() => props.setShow(false)}>
+{/* <div className="news-c main-new"> */}
+        {articles.map(article => (
+          <div className='news-c main-new' key={article.id}>
+            <img src={`http://localhost:5000/${article.image}`} className="logo" alt={article.phoneModels}></img>
+            <h5>{article.title}</h5>
+            <p className="p">{article.article}</p>
 
-
-    {/* <div className="news-c main-new"> */}
-    {articles.map(article => (
-      <div className='news-c main-new' key={article.id}>
-        <img src={`http://localhost:5000/${article.image}`} className="logo" alt={article.phoneModels}></img>
-        <h5>{article.title}</h5>
-        <p className="p">{article.article}</p>
-
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
 
 
 
 
-
+      
 }
 export default NewsCards;
