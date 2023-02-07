@@ -52,66 +52,66 @@ const Adminarticle = () => {
 
   return (
     <div className="container">
-    <AdminNav/>
+      <AdminNav />
 
-    <form className="contact-form">
+      <form className=" contact-formm ">
 
-      <input
-        type="text"
-        name="title"
-        value={title}
-        placeholder="Enter article title"
-        onChange={onChange}
-        required
-      />
-      <input
-        type="text"
-        name="description"
-        value={description}
-        placeholder="Enter article Description"
-        onChange={onChange}
-        required
-      />
-      <br />
-      <input
-        type="text"
-        name="article"
-        value={article}
-        placeholder="Body"
-        onChange={onChange}
-        required
-      />
-      <input
-        type="text"
-        name="date"
-        value={date}
-        placeholder="Date"
-        onChange={onChange}
-        required
-      />
-      <br />
-      <input
-        type="text"
-        name="author"
-        value={author}
-        placeholder="Enter your author "
-        onChange={onChange}
-        required
-      />
-      <br />
-      <input
-        type="file"
-        name="image"
-        // multiple
-        // accept="image/*"
-        onChange={onChange}
-      />
+        <input
+          type="text"
+          name="title"
+          value={title}
+          placeholder="Enter article title"
+          onChange={onChange}
+          required
+        />
+        <input
+          type="text"
+          name="description"
+          value={description}
+          placeholder="Enter article Description"
+          onChange={onChange}
+          required
+        />
+        <br />
+        <input
+          type="text"
+          name="article"
+          value={article}
+          placeholder="Body"
+          onChange={onChange}
+          required
+        />
+        <input
+          type="text"
+          name="date"
+          value={date}
+          placeholder="Date"
+          onChange={onChange}
+          required
+        />
+        <br />
+        <input
+          type="text"
+          name="author"
+          value={author}
+          placeholder="Enter your author "
+          onChange={onChange}
+          required
+        />
+        <br />
+        <input
+          type="file"
+          name="image"
+          // multiple
+          // accept="image/*"
+          onChange={onChange}
+        />
 
-      <br />
-      <button type="submit" onClick={onSubmit}>
-        Post
-      </button>
-    </form>
+        <br />
+        <button type="submit" onClick={onSubmit}>
+          Post
+        </button>
+      </form>
     </div>
 
   );
