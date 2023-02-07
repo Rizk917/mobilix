@@ -1,11 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import './adminarticles.css'
+import "./adminarticles.css";
 import AdminNav from "./adminNav";
 
 function AdminContactUs() {
+  const [users, setUsers] = useState([]);
 
+  const { id } = useParams();
+
+  useEffect(() => {
+    loadUsers();
+  }, []);
+  const loadUsers = async () => {
+    const result = await axios.get("http://localhost:5000/contactus");
+    const latest1 = result.data.sort((a, b) => {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+    setUsers(latest1);
+  };
+  const deleteUser = async (id) => {
+    await axios.delete(`http://localhost:5000/contactus/${id}`);
+    loadUsers();
+  };
   return (
     <div className="container">
       <AdminNav />
@@ -22,12 +39,44 @@ function AdminContactUs() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><span>Index </span>2</td>
-              <td><span>Name: </span>Raoul Baddawi</td>
-              <td><span>Email: </span>Raoulbaddawi1@gmail.com</td>
-              <td className="divv"><span>Message: </span>helohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohelohel</td>
-              <td><button className="tbl-btn">Delete</button></td>
+            {users.map((user, index) => (
+              <tr key={index}>
+                <th scope="row">{index + 1}</th>
+                <td>
+                  <span>Index </span> {index}
+                </td>
+                <td>
+                  <span>Name: </span>
+                  {user.fullName}
+                </td>
+                <td>
+                  <span>Email: </span>
+                  {user.mail}
+                </td>
+                <td className="divv">
+                  <span>Message: </span>
+                  {user.Message}
+                </td>
+
+                <td>
+                  <button
+                    className="tbl-btn"
+                    onClick={() => deleteUser(user._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+            {/* <tr key={index}>
+               <th scope="row" >
+                  {index + 1}
+                </th>
+              <td><span>Index </span>  {index}</td>
+              <td><span>Name: </span>{user.fullName}</td>
+              <td><span>Email: </span>{user.mail}</td>
+              <td className="divv"><span>Message: </span>{user.Message}</td>
+              <td><button   className="tbl-btn"    onClick={() => deleteUser(user._id)>Delete</button></td>
             </tr>
             <tr>
               <td>3</td>
@@ -56,7 +105,7 @@ function AdminContactUs() {
               <td><span>Email: </span>mhmd@gmail.org</td>
               <td><span>Message: </span>wa7sh l back</td>
               <td><button className="tbl-btn">Keep</button></td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </main>
@@ -64,43 +113,10 @@ function AdminContactUs() {
   );
 }
 
-
 export default AdminContactUs;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <h1>Contact US</h1>
+{
+  /* <h1>Contact US</h1>
         <table className="admin-table">
           <thead className="tbl-head">
             <tr>
@@ -134,27 +150,24 @@ export default AdminContactUs;
               </tr>
             ))}
           </tbody>
-        </table> */}
+        </table> */
+}
 
+// const [users, setUsers] = useState([]);
 
+// const { id } = useParams();
 
+// useEffect(() => {
+//   loadUsers();
+// }, []);
 
+// const loadUsers = async () => {
+//   const result = await axios.get("http://localhost:5000/contactus");
+//   console.log(result.data);
+//   setUsers(result.data);
+// }
 
-        // const [users, setUsers] = useState([]);
-
-  // const { id } = useParams();
-
-  // useEffect(() => {
-  //   loadUsers();
-  // }, []);
-
-  // const loadUsers = async () => {
-  //   const result = await axios.get("http://localhost:5000/contactus");
-  //   console.log(result.data);
-  //   setUsers(result.data);
-  // }
-
-  // const deleteUser = async (id) => {
-  //   await axios.delete(`http://localhost:5000/contactus/${id}`);
-  //   loadUsers();
-  // };
+// const deleteUser = async (id) => {
+//   await axios.delete(`http://localhost:5000/contactus/${id}`);
+//   loadUsers();
+// };
