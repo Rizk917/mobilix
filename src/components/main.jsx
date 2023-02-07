@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 
 function Home() {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false)
     const [open, setOpen] = useState(true);
 
     return (
