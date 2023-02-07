@@ -92,8 +92,10 @@ const AdminPhonedata = () => {
 
   const loadphoness = async () => {
     const result = await axios.get("http://localhost:5000/phones");
-    console.log(result.data);
-    setphoness(result.data);
+    const sortedphones = result.data.sort((a, b) => {
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+    setphoness(sortedphones);
   };
 
   const deletephones = async (id) => {
@@ -104,7 +106,7 @@ const AdminPhonedata = () => {
   return (
     <>
       <AdminNav />
-      <div className="phones-table">
+      <div className="content-table">
         <h1>Phones</h1>
         <table>
           <thead>
@@ -130,7 +132,7 @@ const AdminPhonedata = () => {
 
                 <td>
                   <button
-                    className="button2"
+                    className="tbl-btn"
                     onClick={() => deletephones(phones._id)}
                   >
                     Delete

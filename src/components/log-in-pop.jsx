@@ -2,18 +2,49 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const LgiPop = () => {
-    const [formData, setFormData] = useState({
-        email: "",
-        password: ""
-    });
+    // const [formData, setFormData] = useState({
+    //     email: "",
+    //     password: ""
+    // });
+
+
+    // const { email, password } = formData;
+
+    // const handleChange = (e) => {
+    //     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // };
+
+    
+const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+
+	async function loginUser(event) {
+		event.preventDefault()
+
+		const response = await fetch('http://localhost:1337/api/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				email,
+				password,
+			}),
+		})
+
+		const data = await response.json()
+
+		if (data.user) {
+			localStorage.setItem('token', data.user)
+			alert('Login successful')
+			window.location.href = '/dashboard'
+		} else {
+			alert('Please check your username and password')
+		}
+	}
+
+
     const [error, setError] = useState("");
-
-    const { email, password } = formData;
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -48,7 +79,8 @@ const LgiPop = () => {
                         name="email"
                         value={email}
                         placeholder="Your email"
-                        onChange={handleChange}
+                        // onChange={handleChange}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     {error === "Password is required" && <p className="error">{error}</p>}
                     <input
@@ -56,9 +88,10 @@ const LgiPop = () => {
                         name="password"
                         value={password}
                         placeholder="Your password"
-                        onChange={handleChange}
+                        // onChange={handleChange}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button className="formlg-sbmt" type="submit">Submit</button>
+                    <button className="formlg-sbmt" value="login" type="submit">Submit</button>
                 </form>
                 <div className="arrow-back">
                     <a href="/" onClick={drop}></a>
